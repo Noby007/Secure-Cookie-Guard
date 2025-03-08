@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Cookies - Secure Cookie Guard</title>
+    <style>
+        /* Global Styling */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #1e1e2e;
+            color: #ffffff;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #f0f0f0;
+            text-shadow: 0 0 10px rgba(220, 163, 255, 0.9);
+        }
+
+        /* Search Bar */
+        #searchBar {
+            width: 100%;
+            max-width: 800px;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #444;
+            border-radius: 6px;
+            background: #2b2b3a;
+            color: #ffffff;
+            font-size: 12px;
+        }
+
+        /* Table Container */
+        .table-container {
+            width: 100%;
+            max-width: 90%px;
+            max-height: 500px; /* Increased height for the scrollable box */
+            overflow-y: auto; /* Vertical scrollbar */
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(220, 163, 255, 0.3);
+            background: #2b2b3a;
+        }
+
+        /* Cookie Table */
+        #cookieTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        #cookieTable th,
+        #cookieTable td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+            white-space: nowrap;
+        }
+
+        #cookieTable th {
+            background: #252538;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        #cookieTable tr:hover {
+            background: rgba(69, 217, 0, 0.1);
+        }
+
+        /* Truncate Long Text */
+        .truncate {
+            max-width: 150px; /* Adjust as needed */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Tooltip for Truncated Content */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 2;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Action Buttons */
+        .action-button {
+            padding: 4px 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 10px;
+            margin-right: 3px;
+            transition: background 0.3s;
+        }
+
+        .edit-button {
+            background: #0080FF;
+            color: white;
+        }
+
+        .delete-button {
+            background: #FF4444;
+            color: white;
+        }
+
+        .copy-button {
+            background: #00A0FF;
+            color: white;
+        }
+
+        .action-button:hover {
+            opacity: 0.8;
+        }
+
+        /* No Cookies Message */
+        #noCookiesMessage {
+            text-align: center;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        /* Add Cookie Button */
+        #addCookieButton {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: #45d900;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        #addCookieButton:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Cookies</h1>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchBar" placeholder="Search cookies..." />
+
+    <!-- Table Container -->
+    <div class="table-container">
+        <table id="cookieTable">
+            <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Path</th>
+                    <th>Name</th>
+                    <th>Store ID/Partition Key</th>
+                    <th>Value</th>
+                    <th>Expires</th>
+                    <th>Same Site</th>
+                    <th>Host-Only</th>
+                    <th>Http-Only</th>
+                    <th>Secure</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cookies will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- No Cookies Message -->
+    <div id="noCookiesMessage">No cookies found.</div>
+
+    <!-- Add Cookie Button -->
+    <button id="addCookieButton">Add Cookie</button>
+
+    <script src="manage-cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Secure Cookie Guard",
+    "version": "1.0",
+    "description": "Encrypt, decrypt, import, and export cookies securely.",
+    "permissions": [
+        "cookies",
+        "storage",
+        "downloads",
+        "activeTab",
+        "sidePanel", "tabs"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "side_panel": {
+        "default_path": "sidepanel.html"
+    },
+    "action": {
+        "default_icon": {
+            "16": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
+        }
+    },
+    "icons": {
+         "16": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
+
+    }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Cookie Guard</title>
+    <style>
+        /* Sidebar Styling */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #1e1e2e;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            overflow-y: auto;
+            min-width: 250px;
+            max-width: 550px;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2b2b3a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #666;
+        }
+
+        /* Title */
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: #f0f0f0;
+            text-shadow: 0 0 10px rgba(220, 163, 255, 0.9);
+        }
+
+        /* Profile Section */
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background: #252538;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(220, 163, 255, 0.3);
+        }
+
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(69, 217, 0, 0.6);
+            box-shadow: 0 0 10px rgba(69, 217, 0, 0.8);
+        }
+
+        .profile-info {
+            flex-grow: 1;
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        .settings-button {
+            background: #444;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .settings-button:hover {
+            background: #666;
+        }
+
+        /* Cookie Container */
+        .cookie-container {
+            background: #2b2b3a;
+            border-radius: 8px;
+            padding: 10px;
+            max-height: 250px;
+            overflow-y: auto;
+            text-align: left;
+            font-size: 14px;
+            box-shadow: inset 0 0 12px rgba(220, 163, 255, 0.3);
+            margin-top: 10px;
+        }
+
+        /* Individual Cookie Items */
+        .cookie-item {
+            padding: 8px;
+            margin-bottom: 6px;
+            background: rgba(69, 217, 0, 0.1);
+            border-left: 3px solid #45d900;
+            border-radius: 5px;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        /* Action Section */
+        .action-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: #dcdcdc;
+            text-shadow: 0 0 12px rgba(220, 163, 255, 0.8);
+        }
+
+        /* Buttons */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px 18px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 12px rgba(220, 163, 255, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0080FF, #00A0FF);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #444, #555);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Secure Cookie Guard</div>
+    <div class="profile">
+        <img src="/pfp.jpg" alt="Profile Picture">
+        <div class="profile-info">Logged in as <strong>Tom Joe James</strong></div>
+        <button class="settings-button" aria-label="Settings">⚙️ Settings</button>
+    </div>
+    
+    <ul id="cookieList" class="cookie-container">
+        <li class="cookie-item">Loading cookies...</li>
+    </ul>
+    
+    <div class="action-title">Take Action</div>
+    <div class="btn-container">
+        <button id="encryptBtn" class="btn btn-primary">Encrypt Now</button>
+        <button id="decryptBtn" class="btn btn-primary">Decrypt Now</button>
+        <button id="importBtn" class="btn btn-secondary">Import</button>
+        <button id="exportBtn" class="btn btn-secondary">Export</button>
+        <button id="clearCookiesBtn" class="btn btn-primary">Clear Cookies</button>
+    </div>
+
+    <script src="sidepanel.js"></script>
+</body>
+</html>
