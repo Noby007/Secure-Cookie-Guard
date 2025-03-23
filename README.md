@@ -1,8 +1,6 @@
 # SecureCookieGuard 🔒
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/your-extension-id-here)](https://chrome.google.com/webstore/detail/securecookiegard/your-extension-id)
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/securecookiegard)](https://github.com/yourusername/securecookiegard/issues)
 
 A Chrome extension that encrypts browser cookies using AES-256-GCM to prevent unauthorized access and tampering by third-party extensions/sites. Born from the need to combat deceptive practices like cookie hijacking.
 
