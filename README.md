@@ -4,7 +4,7 @@
 
 A Chrome extension that encrypts browser cookies using AES-256-GCM to prevent unauthorized access and tampering by third-party extensions/sites. Born from the need to combat deceptive practices like cookie hijacking.
 
-![Demo GIF](https://via.placeholder.com/800x400.png?text=Demo+Encrypting+Cookies+in+Real-Time)
+![Image](https://github.com/user-attachments/assets/7977e300-2523-4b2b-980a-525836dec5a8)
 
 ## ✨ Features
 - **Real-Time Cookie Encryption** (AES-256-GCM + HMAC Integrity)
